@@ -1,0 +1,13 @@
+{% extends "padre.html" %}
+{% load static %}
+
+{% block contenido %}
+    <form action="agregar_curso" method="POST">
+        {% csrf_token %}
+        {{mi_formulario}}
+        <button>Enviar</button>
+    </form>
+    
+
+
+{% endblock %}
