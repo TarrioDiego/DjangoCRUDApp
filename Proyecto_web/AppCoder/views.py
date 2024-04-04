@@ -3,6 +3,8 @@ from AppCoder.models import Curso, Profesor, Alumno
 from django.http import HttpResponse 
 from django.template import loader
 from AppCoder.forms import CursoForm, ProfesorForm , AlumnoForm
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from django.contrib.auth import login, authenticate
 # Create your views here.
 
 
@@ -22,9 +24,9 @@ def alta_curso(request,nombre):
 def ver_cursos(request):
     cursos = Curso.objects.all() # devuelve una lista de diccionarios
     dicc = {"cursos": cursos}
-    plantilla = loader.get_template("cursos.html")
-    documento = plantilla.render(dicc)
-    return HttpResponse(documento)
+   # plantilla = loader.get_template("cursos.html")
+   # documento = plantilla.render(dicc)
+    return render(request,'cursos.html', context=dicc)
 
 
 def curso_formulario(request):
@@ -232,3 +234,46 @@ def buscar_alumno(request):
 
     else:
         return render(request,'buscar_alumno.html')
+
+# ---------------- Inicio apartado login y logout ----------------------
+
+def login_request(request):
+
+    if request.method == 'POST':
+        form = AuthenticationForm(request, data= request.POST)
+
+        if form.is_valid():
+            usuario = form.cleaned_data['username']
+            contra = form.cleaned_data['password']
+
+            user = authenticate(username= usuario, password=contra)
+            
+
+            if user is not None:
+                login(request , user)
+                return render(request, 'index.html', {'mensaje':f'bienvenido/a {usuario}' })
+
+        
+            else:
+                return render(request,'index.html',{'mensaje':f'usuario no encontrado'})
+        
+        else:
+            return render(request,'index.html',{'mensaje':f"FORMULARIO INCORRECTO  {form}"})
+    else:
+        form = AuthenticationForm()
+        return render(request, 'login.html',{'form': form})
+
+
+def register(request):
+    
+
+    if request.method == "POST":
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            mensaje = "Usuario creado"
+            return render(request,'index.html',{'mensaje': mensaje})
+
+    else:
+        form = UserCreationForm()
+        return render(request, 'registro.html', {'form':form})

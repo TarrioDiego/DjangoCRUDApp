@@ -3999,7 +3999,7 @@ textarea.form-control-lg {
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
   color: #fff;
-  background-color: #0d6efd;
+  background-color: #47e616;
 }
 
 .nav-fill > .nav-link,
@@ -4671,7 +4671,7 @@ textarea.form-control-lg {
   width: 100%;
   padding: 1rem 1.25rem;
   font-size: 1rem;
-  color: #212529;
+  color: #212924;
   text-align: left;
   background-color: #fff;
   border: 0;
@@ -11303,7 +11303,7 @@ textarea.form-control-lg {
 header.masthead {
   position: relative;
   background-color: #343a40;
-  background: url("../assets/img/pizarra.jpg") no-repeat center center;
+  background: url("../assets/img/cursos.jpg") no-repeat center center;
   background-size: cover;
   padding-top: 8rem;
   padding-bottom: 8rem;

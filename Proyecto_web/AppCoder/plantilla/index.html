@@ -1,12 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>holaa puto</h1>
-</body>
-</html>
+{% extends  'padre.html' %}
+
+{% load static %}
+
+{% block contenido %}
+   {{ mensaje }}
+   <div class="container">
+        <div class="row">
+            <div class="col-12  col-md-4">
+                <div class="card">
+                    <img src="{% static 'AppCoder/assets/img/testimonials-2.jpg' %}"/>
+                    <div class="card-body">
+                        <h5 class="card-title">Ramon Perez</h5>
+                        <p class="card-text">Me gusto mucho el curso</p>
+                        <a class="btn btn-danger" href="">Enviar mensaje</a>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+    <a href="" class="btn btn-danger">LogOut</a>
+
+{% endblock %}

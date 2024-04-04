@@ -20,16 +20,19 @@
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
+               <!--   <p>Ruta actual: {{ request.path }}</p>-->
                 <a class="navbar-brand" href="#!">Start Bootstrap</a>
-                <a class="btn btn-primary" href="{% url 'alumnos' %}">Alumnos</a>
-                <a class="btn btn-primary" href="{% url 'profesores' %}">Profesores</a>
-                <a class="btn btn-primary" href="{% url 'cursos' %}">Cursos</a>
-                <a class="btn btn-primary" href="">Sign Up</a>
+                <a class="btn {% if '/alumnos' in request.path %}btn-primary{% else %}btn-secondary{% endif %}" href="{% url 'alumnos' %}">Alumnos</a>
+                <a class="btn {% if '/profesores' in request.path %}btn-primary{% else %}btn-secondary{% endif %}" href="{% url 'profesores' %}">Profesores</a>
+                <a class="btn {% if '/cursos' in request.path %}btn-primary{% else %}btn-secondary{% endif %}" href="{% url 'cursos' %}">Cursos</a>
+                <a class="btn {% if '/login' in request.path %}btn-primary{% else %}btn-secondary{% endif %}" href="{% url 'login' %}">Login</a>
+                <a class="btn {% if '/register' in request.path %}btn-primary{% else %}btn-secondary{% endif %}" href="{% url 'register' %}">Registrarse</a>
+                <a class="btn {% if '/sign up' in request.path %}btn-primary{% else %}btn-secondary{% endif %}" href="">Sign Up</a>
                 
             </div>
         </nav>
         <!-- Masthead-->
-        <header class="masthead" style="background: url(../static/assets/img/pizarra.jpg) no-repeat center center ;">
+        <header class="masthead" style="background-image: url(../static/assets/img/alumnos.jpg) no-repeat center center ;">
             <div class="container position-relative">
                 <div class="row justify-content-center">
                     <div class="col-xl-6">

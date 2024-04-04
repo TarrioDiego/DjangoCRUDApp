@@ -4,7 +4,7 @@ from .views import *
 urlpatterns = [
     path('altaCurso<nombre>',alta_curso),
     path("", inicio),
-    path('ver_cursos', ver_cursos, name='cursos'),
+    path('cursos', ver_cursos, name='cursos'),
     path('agregar_curso', curso_formulario, name='agregar_curso'),
     path('buscar_curso',buscar_curso, name='buscar_curso'),
     path('eliminar_curso/<int:id>', eliminar_curso, name='eliminar_curso'),
@@ -22,5 +22,8 @@ urlpatterns = [
     path('eliminar_alumno/<int:id>', eliminar_alumno, name='eliminar_alumno'),
     path('editar_alumno<int:id>', editar_alumno, name='editar_alumno'),
     path('buscar_alumno', buscar_alumno, name='buscar_alumno'),
+
+    path('login', login_request, name='login'),
+    path('register', register, name='register')
 
 ]
