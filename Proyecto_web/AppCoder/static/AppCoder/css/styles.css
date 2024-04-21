@@ -11308,7 +11308,17 @@ header.masthead {
   padding-top: 8rem;
   padding-bottom: 8rem;
 }
-header.masthead:before {
+
+/* Estilos para el encabezado con la imagen de fondo predeterminada */
+header.masthead.background-default {
+  position: relative;
+  background-color: #343a40;
+  background: url("../assets/img/pizarra.jpg") no-repeat center center;
+  background-size: cover;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+header.masthead.background-default:before {
   content: "";
   position: absolute;
   background-color: #1c375e;
@@ -11318,18 +11328,68 @@ header.masthead:before {
   left: 0;
   opacity: 0.5;
 }
-header.masthead h1, header.masthead .h1 {
-  font-size: 2rem;
+
+/* Estilos para el encabezado con la imagen de fondo de ruta1 */
+header.masthead.background-ruta1 {
+  position: relative;
+  background-color: #343a40;
+  background: url("../assets/img/alumnos.jpg") no-repeat center center;
+  background-size: cover;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
 }
-@media (min-width: 768px) {
-  header.masthead {
-    padding-top: 12rem;
-    padding-bottom: 12rem;
-  }
-  header.masthead h1, header.masthead .h1 {
-    font-size: 3rem;
-  }
+header.masthead.background-ruta1:before {
+  content: "";
+  position: absolute;
+  background-color: #1c375e;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
 }
+
+/* Estilos para el encabezado con la imagen de fondo de ruta2 */
+header.masthead.background-ruta2 {
+  position: relative;
+  background-color: #343a40;
+  background: url("../assets/img/cursos.jpg") no-repeat center center;
+  background-size: cover;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+header.masthead.background-ruta2:before {
+  content: "";
+  position: absolute;
+  background-color: #1c375e;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+}
+
+/* Estilos para el encabezado con la imagen de fondo de ruta3 */
+header.masthead.background-ruta2 {
+  position: relative;
+  background-color: #343a40;
+  background: url("../assets/img/profesor.jpg") no-repeat center center;
+  background-size: cover;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+header.masthead.background-ruta2:before {
+  content: "";
+  position: absolute;
+  background-color: #1c375e;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+}
+
+/* Resto de tus estilos existentes aquí */
 
 .showcase .showcase-text {
   padding: 3rem;

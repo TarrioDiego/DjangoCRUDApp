@@ -1,5 +1,6 @@
 from django import forms
-
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
 '''
 class Curso_formulario(forms.Form):
     
@@ -24,7 +25,7 @@ class AlumnosForm(forms.Form):
 '''  # Otra forma de armar los forms
 
 
-from .models import Curso, Profesor, Alumno
+from .models import Curso, Profesor, Alumno, Avatar
 
 class CursoForm(forms.ModelForm):
     class Meta:
@@ -41,3 +42,18 @@ class AlumnoForm(forms.ModelForm):
         model = Alumno
         fields = ['nombre', 'apellido', 'curso', 'mail']
         widgets = {'curso': forms.CheckboxSelectMultiple}
+
+class UserEditForm(UserCreationForm):
+    email = forms.EmailField(label="Agregar/modificar Email:")
+    password1 = forms.CharField(label="Contrasenia", widget=forms.PasswordInput)
+    password2 = forms.CharField(label="Repetir la contrasenia", widget = forms.PasswordInput)
+
+    class Meta:
+        model = User
+        fields = ['email','password1','password2']
+        help_text = {k:"" for k in fields}
+
+class AvatarForm(forms.ModelForm):
+    class Meta:
+        model = Avatar
+        fields = ['imagen']

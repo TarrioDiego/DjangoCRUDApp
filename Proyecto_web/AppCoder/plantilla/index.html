@@ -4,21 +4,56 @@
 
 {% block contenido %}
    {{ mensaje }}
-   <div class="container">
+
+    <h1 class="text-center">Reseñas sobre la pagina</h1>
+
+{% endblock %} 
+{% block contenido2 %}
+
+<main>
+    <div class="container">
         <div class="row">
-            <div class="col-12  col-md-4">
+            <div class="col-12  col-md-6">
+                <div class="card">
+                    <img src="{% static 'AppCoder/assets/img/testimonials-1.jpg' %}"/>
+                    <div class="card-body">
+                        <h5 class="card-title">Lucia lucre</h5>
+                        <p class="card-text">Me gusto mucho la pagina, muy sencilla y de simple uso.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12  col-md-6">
                 <div class="card">
                     <img src="{% static 'AppCoder/assets/img/testimonials-2.jpg' %}"/>
                     <div class="card-body">
-                        <h5 class="card-title">Ramon Perez</h5>
-                        <p class="card-text">Me gusto mucho el curso</p>
-                        <a class="btn btn-danger" href="">Enviar mensaje</a>
+                        <h5 class="card-title">Nicolas Perez</h5>
+                        <p class="card-text">La pagina esta excelente, pude crear mi usuario sin problemas y elegir mi propio avatar</p>
                     </div>
                 </div>
-            
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12  col-md-6">
+                <div class="card">
+                    <img src="{% static 'AppCoder/assets/img/testimonials-3.jpg' %}"/>
+                    <div class="card-body">
+                        <h5 class="card-title">Valeria Gutierrez</h5>
+                        <p class="card-text">Tengo permisos en la pagina y me encontre con una buen muestreo de datos</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12  col-md-6">
+                <div class="card">
+                    <img src="{% static 'AppCoder/assets/img/testimonials-2.jpg' %}"/>
+                    <div class="card-body">
+                        <h5 class="card-title">Nicolas Perez</h5>
+                        <p class="card-text">Me gusto que tengas que estar logueado para ver determinados botones de la pagina</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <a href="" class="btn btn-danger">LogOut</a>
+</main>
+
 
 {% endblock %}

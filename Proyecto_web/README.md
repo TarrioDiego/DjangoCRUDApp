@@ -15,3 +15,13 @@ Crear una web donde se pueda implementar el funcionamiento model vista template 
 
 
 ## Disfruta de la web 😁😉
+
+En ella encontraras un sistema de logueo, logout y edicion de usuarios, y cuatro apartados, el de inicio que podra visualizar cualquier persona este o no registrada en la web y otros tres que son:
+
+> ALUMNOS 🧑‍🎓
+
+> PROFESORES 🧑🏻‍🏫
+
+> CURSOS 🎓🗞
+
+Ambos tres los representamos en registros de una base de datos relacional, y usamos un sistema CRUD(create, read, update and delete) en cada uno de los apartados, a los cuales solo va a poder acceder un usuario con los permisos necesarios. Para crear ese tipo de usuario deberas ejecutar "python manage.py createsuperuser" en la terminal.
